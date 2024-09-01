@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 
-let gridSize = 16;
+let gridSize = 50;
 
 /* A function that creates a grid of gridsize x gridsize */
 // This could also have been done with flex-wrap //
@@ -31,5 +31,4 @@ boxes.forEach(box => {
     box.style.backgroundColor = "black";
   })
 })
-
 
