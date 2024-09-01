@@ -31,14 +31,6 @@ function createGrid (size) {
 
 createGrid(gridSize);
 
-
-/* Function that deletes current grid */
-function removeGrid() {
-  columnList = container.querySelectorAll(".column");
-  columnList.forEach(column => 
-    container.removeChild(column))
-  }
-
 /* Add event listener to reset button */
 const resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", () => {
@@ -47,7 +39,11 @@ resetButton.addEventListener("click", () => {
     size = 16;
   }
 
-  removeGrid();
+  /*Delete current grid*/
+  columnList = container.querySelectorAll(".column");
+  columnList.forEach(column => 
+    container.removeChild(column))
+
   createGrid(size);
 })
 
