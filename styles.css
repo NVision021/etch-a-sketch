@@ -9,11 +9,13 @@ body {
 }
 
 #container {
+  display: flex;
   width: 650px;
   height: 650px;
-  border: solid;
   background-color: white;
   text-align: center;
+  border: solid;
+  border-width: 1px;
 }
 
 h1 {
