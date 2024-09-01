@@ -17,6 +17,7 @@ body {
 
 button {
   cursor: pointer;
+  font-size: large;
 }
 
 #reset {
