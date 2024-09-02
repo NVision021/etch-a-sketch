@@ -35,17 +35,18 @@ createGrid(gridSize);
 /* Add event listener to reset button */
 const resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", () => {
-  let size = Number(prompt("Enter dimensions for new grid between 1 and 100 (will default to 16 if another value is provided): ", 16));  
-  if (isNaN(size) || size < 1 || size > 100) {
-    size = 16;
+  let size = prompt("Enter dimensions for new grid between 1 and 100 (will default to 16 if another value is provided): ", 16); 
+  if (size !== null) {
+    size = Number(size);
+    if (isNaN(size) || size < 1 || size > 100) {
+      size = 16;
+    }
+    /*Delete current grid and make new one*/
+    columnList = container.querySelectorAll(".column");
+    columnList.forEach(column => 
+      container.removeChild(column))
+    createGrid(size);
   }
-
-  /*Delete current grid*/
-  columnList = container.querySelectorAll(".column");
-  columnList.forEach(column => 
-    container.removeChild(column))
-
-  createGrid(size);
 })
 
 /* Add event listener to colour buttons */
