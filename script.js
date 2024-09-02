@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 
 let gridSize = 16;
+let colour = "black";
 
 /* A function that creates a grid of gridsize x gridsize */
 // This could also have been done with flex-wrap //
@@ -24,7 +25,7 @@ function createGrid (size) {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach(box => {
   box.addEventListener("mouseover", () => {
-    box.style.backgroundColor = "black";
+    box.style.backgroundColor = colour;
   })
 })
 }
@@ -45,6 +46,14 @@ resetButton.addEventListener("click", () => {
     container.removeChild(column))
 
   createGrid(size);
+})
+
+/* Add event listener to colour buttons */
+const colourButtons = document.querySelectorAll("#colour-button");
+colourButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    colour = getComputedStyle(button).backgroundColor;
+  })
 })
 
 
